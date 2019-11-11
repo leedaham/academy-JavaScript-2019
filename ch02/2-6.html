@@ -101,6 +101,26 @@
         var result = Math.ceil(Math.random()*10);
         document.write("1부터 10사이 임의의 정수 : "+result+"<br>");
 
+        // 내장 객체 - String
+        var str1 = new String("Hello Korea");
+        var str2 = "Hello Korea";
+
+        var s1 = str2.charAt(0);
+        var s2 = str2.length;
+        var s3 = str2.indexOf("e");
+        var s4 = str2.lastIndexOf("e");
+        var s5 = str2.replace("Korea", "Busan");
+        var s6 = str2.substring(1, 5);
+
+        document.write("s1 : "+s1+"<br>");
+        document.write("s2 : "+s2+"<br>");
+        document.write("s3 : "+s3+"<br>");
+        document.write("s4 : "+s4+"<br>");
+        document.write("s5 : "+s5+"<br>");
+        document.write("s6 : "+s6+"<br>");
+
+
+
     </script>
 </body>
 </html>
