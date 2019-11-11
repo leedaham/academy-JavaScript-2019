@@ -21,6 +21,86 @@
         wr.deposit(30000);
         wr.withdraw(2000);
         wr.info();
+
+        // JSON (JavaScript Object Notation) - 자바스크립트 객체 표기법 / 매우 많이 사용하는 방법.
+        var nh = {
+            // 멤버변수
+            bank    : "농협",
+            id      : "123-11-1234",
+            name    : "홍길동",
+            money   : 30000,
+
+            // 멤버함수
+            deposit:function(money){
+                this.money += money;
+            },
+            withdraw:function(money){
+                this.money -= money
+            },
+            info:function(){
+                document.write("======================<br>");
+                document.write("은 행 명 : "+this.bank+  "<br>");
+                document.write("계좌번호 : "+this.id+    "<br>");
+                document.write("입 금 주 : "+this.name+  "<br>");
+                document.write("현재잔액 : "+this.money+ "<br>");
+                document.write("----------------------<br>");
+            }
+        };
+
+        nh.deposit(200000);
+        nh.withdraw(2000);
+        nh.info();
+
+        // JSON 객체
+        var user = {
+            "uid"   : "A101",
+            "name"  : "김춘추",
+            "hp"    : "010-1234-1234",
+            "pos"   : "과장"
+        };
+
+        document.write("user 아이디 : "+user.uid+"<br>");
+        document.write("user 이  름 : "+user.name+"<br>");
+        document.write("user 휴대폰 : "+user.hp+"<br>");
+        document.write("user 직  급 : "+user.pos+"<br>");
+
+        // 내장 객체 - Date
+        var date    = new Date();
+        var y       = date.getFullYear();
+        var m       = date.getMonth();
+        var d       = date.getDate();
+
+        var hour    = date.getHours();
+        var min     = date.getMinutes();
+        var sec     = date.getSeconds();
+
+        var msg  = "오늘날짜 : "+y+"년 "+m+"월 "+d+"일<br>"
+            msg += "현지시간 : "+hour+":"+min+":"+sec+"<br>";
+
+        document.write(msg);
+
+        // 내장 객체 - Math
+        var r1 = Math.abs(-5);
+        var r2 = Math.ceil(1.1);
+        var r3 = Math.floor(1.9);
+        var r4 = Math.round(1.4);
+        var r5 = Math.round(1.9);
+
+        document.write("r1 : "+r1+"<br>");
+        document.write("r2 : "+r2+"<br>");
+        document.write("r3 : "+r3+"<br>");
+        document.write("r4 : "+r4+"<br>");
+        document.write("r5 : "+r5+"<br>");
+
+        var num1 = Math.random();
+        var num2 = num1 * 10;
+        var num3 = Math.ceil(num2);
+
+        document.write("1부터 10사이 임의의 정수 : "+num3+"<br>");
+
+        var result = Math.ceil(Math.random()*10);
+        document.write("1부터 10사이 임의의 정수 : "+result+"<br>");
+
     </script>
 </body>
 </html>
