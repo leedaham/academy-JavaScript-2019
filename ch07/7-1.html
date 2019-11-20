@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-1</title>
+    
+    <style></style>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var td1 = $('#t1 tr > td:nth-child(2)');
+
+            $('#btn1').click(function(){
+
+                $.ajax({
+                    url     : 'http://localhost:8080/ch14/14-7.jsp',
+                    type    : 'get',
+                    dataType: 'json',
+                    success:function(data){
+
+                        td1.eq(0).text(data.k1);
+                        td1.eq(1).text(data.k2);
+                        td1.eq(2).text(data.k3);
+                        td1.eq(3).text(data.k4);
+                        td1.eq(4).text(data.k5);
+                    }
+                });
+            });
+
+            var td2 = $('#t2 tr > td:nth-child(2)');
+
+            $('#btn2').click(function(){
+                $.ajax({
+                    url     : 'http://chhak.kr/ajax/data/data1.json',
+                    type    : 'get',
+                    dataType: 'json',
+                    success:function(data){
+
+                        td2.eq(0).text(data.name);
+                        td2.eq(1).text(data.price);
+                        td2.eq(2).text(data.date);
+                        td2.eq(3).text(data.origin);
+                    }
+                });
+            });
+
+            var tr = $('#t3 tr');
+
+            $('#btn3').click(function(){
+                $.ajax({
+                    url     : 'http://localhost:8080/ch14/14-8.jsp',
+                    type    : 'get',
+                    dataType: 'json',
+                    success:function(data){
+
+                        var fruit = data.fruit;
+                        
+                        for(var i=0; i<fruit.length; i++){
+
+                            var obj = fruit[i];
+
+                            tr.eq(i+1).children().eq(0).text(obj.name);
+                            tr.eq(i+1).children().eq(1).text(obj.price);
+                            tr.eq(i+1).children().eq(2).text(obj.origin);
+                        }
+
+                }
+            });
+        });
+        
+    });
+    </script>
+
+</head>
+<body>
+    <h3>7.제이쿼리 통신 (AJAX)</h3>
+
+    <table id="t1" border="1">
+        <tr>
+            <td>k1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>k2</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>k3</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>k4</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>k5</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <button id="btn1">데이터 불러오기</button>
+
+    <table id="t2" border="1">
+        <tr>
+            <td>name</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>price</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>date</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>origin</td>
+            <td>-</td>
+        </tr>
+
+    </table>
+    <button id="btn2">data load</button>
+
+    <hr>
+    <table id="t3" border="1">
+        <tr>
+            <td>name</td>
+            <td>price</td>
+            <td>origin</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+    </table>
+    <button id="btn3">데이터 불러오기</button>
+</body>
+</html>
