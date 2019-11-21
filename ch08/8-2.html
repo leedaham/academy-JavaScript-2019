@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-2</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <style></style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script>
+        $(function(){
+            $('.slider').bxSlider({
+                slideWidth: 280,
+                auto:true,
+                pause:3000,
+                controls:false
+
+            });
+        });
+    </script>
+</head>
+<body>
+    <h3>2.bxslider 플러그인</h3>
+
+    <ul class="slider">
+        <li><img src="./img/1.jpg" alt=""></li>
+        <li><img src="./img/2.jpg" alt=""></li>
+        <li><img src="./img/3.jpg" alt=""></li>
+    </ul>
+
+</body>
+</html>

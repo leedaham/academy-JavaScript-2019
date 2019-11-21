@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-1</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: orange;
+            border:  1px solid black;
+        }
+
+        .sort > li {
+            width: 100px;
+            height: 40px;
+            border: 1px solid green;
+        }
+        .accordion {
+            width: 400px;
+        }
+
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $('.box1').draggable();
+
+            $('.box2').draggable({
+                revert: true
+            });
+
+            $('.box3').draggable({
+                axis:'x'
+            });
+
+            $('.sort').sortable();
+
+            $('.accordion').accordion();
+        });
+    </script>
+</head>
+<body>
+    <h3>1.제이쿼리 플러그인</h3>
+    
+    <h4>draggable 플러그인</h4>
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <div class="box box3">box3</div>
+
+    <h4>sortable</h4>
+    <ul class="sort">
+        <li>서울</li>
+        <li>대전</li>
+        <li>대구</li>
+        <li>부산</li>
+        <li>광주</li>
+    </ul>
+
+    <h4>accordian</h4>
+    <div class="accordion">
+        <h3>1절</h3>
+        <div>
+            <p>
+                동해물과 백주산이 마르고 닳고록<br>
+                하나님이 보우하사 우리나라 만세<br>
+                무궁화 삼천리 화려강산 <br>
+                대한사람 대한으로 길이 보전하세.<br>
+            </p>
+        </div>
+        <h3>2절</h3>
+        <div>
+            <p>
+                남산위에 저소나무 철갑을 두른듯<br>
+                하나님이 보우하사 우리나라 만세<br>
+                무궁화 삼천리 화려강산 <br>
+                대한사람 대한으로 길이 보전하세.<br>
+            </p>
+        </div>
+        <h3>3절</h3>
+        <div>
+            <p>
+                가을하늘 공활한데 높고 구름없이<br>
+                하나님이 보우하사 우리나라 만세<br>
+                무궁화 삼천리 화려강산 <br>
+                대한사람 대한으로 길이 보전하세.<br>
+            </p>
+        </div>
+        <h3>4절</h3>
+        <div>
+            <p>
+                동해물과 백주산이 마르고 닳고록<br>
+                하나님이 보우하사 우리나라 만세<br>
+                무궁화 삼천리 화려강산 <br>
+                대한사람 대한으로 길이 보전하세.<br>
+            </p>
+        </div>
+    </div>
+
+
+</body>
+</html>
